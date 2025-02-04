@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        color: #0077b6;
+      }
+      h2 {
+        font-size: 16px;
+        flex: 1;
+        text-overflow: ellipsis;
+      }
+      body {
+        background: rgb(2, 0, 36);
+        background: linear-gradient(
+          298deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 9, 121, 1) 0%,
+          rgba(0, 212, 255, 1) 100%
+        );
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .pai {
+        background-color: aliceblue;
+        max-width: 200px;
+        min-width: 400px;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        height: 26px;
+        margin-bottom: 10px;
+      }
+
+      input[type="search"] {
+        padding: 0 02px;
+        height: 26px;
+        flex: 1;
+        border: none;
+        border-bottom: 1.5px solid #0077b6;
+      }
+
+      button {
+        margin: 0 0px;
+        height: 100%;
+        display: block;
+        width: 50px;
+        background-color: #90e0ef;
+        outline: none;
+        border: 0.5px solid #0077b6;
+      }
+
+      hr {
+        margin-top: 10px;
+      }
+
+      .cont {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 20px;
+        padding-left:4px;
+        padding-right: 0px;
+        border: 0.1px solid rgb(116, 116, 195);
+        border-radius: 20px;
+        overflow: hidden;
+
+      }
+
+      .ting {
+        background-color: #0077b6;
+        width: 97px;
+        display: flex;
+;
+      }
+      span {
+        display: block;
+        text-align: center;
+        border: 1px solid black;
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pai">
+      <header>
+        <h1>To do list web</h1>
+      </header>
+      <div class="container">
+        <input type="search" placeholder="Add/Search a new task" />
+        <button>Add</button>
+        <button>Search</button>
+      </div>
+
+      <div class="cont">
+        <h2>My Tasks</h2>
+        <div class="ting">
+          <span>delete</span>
+          <span>done</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
