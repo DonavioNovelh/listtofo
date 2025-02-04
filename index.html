@@ -5,124 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
 
-      h1 {
-        color: #0077b6;
-        height: 60px;
-      }
-      h2 {
-        font-size: 16px;
-        flex: 1;
-        text-overflow: ellipsis;
-      }
-      body {
-        padding: 20px;
-        background: rgb(2, 0, 36);
-        background: linear-gradient(
-          298deg,
-          rgba(2, 0, 36, 1) 0%,
-          rgba(9, 9, 121, 1) 0%,
-          rgba(0, 212, 255, 1) 100%
-        );
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        width: 100vw;
-      }
-
-      .pai {
-        background-color: white;
-        min-width: 285px;
-         /* Largura mínima */
-      max-width: 400px;  /* Largura máxima */
-      width: 100%;  /* Largura total */
-        background-repeat: no-repeat;
-        border-radius: 10px;
-        padding: 10px;
-      }
-
-      .container {
-        display: flex;
-        align-items: center;
-        height: 30px;
-        margin-bottom: 10px;
-      }
-
-      input[type="search"] {
-        padding: 0 02px;
-        height: 100%;
-        flex: 1;
-        border: none;
-        border-bottom: 1.5px solid #0077b6;
-      }
-      input:focus {
-        outline: none;
-      }
-
-      button {
-        margin: 0 0px;
-        height: 100%;
-        display: block;
-        width: 50px;
-        background-color: #90e0ef;
-        outline: none;
-        border: 0.5px solid #0077b6;
-      }
-
-      hr {
-        margin-top: 10px;
-      }
-
-      .cont {
-        background-color: #55afe0;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 36px;
-        padding-left:4px;
-        padding-right: 0px;
-        border-radius: 20px;
-        overflow: hidden;
-
-      }
-
-      .delete {
-        background-color: #F8D7DA;
-        color: #951C24;
-      }
-
-      .done {
-        color: #CCE5FF;
-        background-color: #004085;
-      }
-
-      .ting {
-      
-        width: 97px;
-        display: flex;
-        height: 100%;
-        align-items: center;
-      }
-      span {
-        display: block;
-        text-align: center;
-        height: 100%;
-        display: flex;
-        height: 100%;
-        align-items: center;
-        flex: 1;
-        justify-content: center;
-      }
-    </style>
   </head>
   <body>
     <div class="pai">
@@ -130,9 +13,21 @@
         <h1>To do list web</h1>
       </header>
       <div class="container">
-        <input type="search" placeholder="Add/Search a new task" />
-        <button>Add</button>
-        <button>Search</button>
+        <input
+          class="input"
+          type="search"
+          placeholder="Add/Search a new task"
+        />
+        <button class="adicionar">Add</button>
+        <button class="b1">Search</button>
+      </div>
+
+      <div class="cont">
+        <h2>My Tasks</h2>
+        <div class="ting">
+          <span class="delete">delete</span>
+          <span class="done">done</span>
+        </div>
       </div>
 
       <div class="cont">
@@ -144,4 +39,101 @@
       </div>
     </div>
   </body>
+  <script>
+    let input = document.querySelector('.input')
+    let pai = document.querySelector('.pai')
+
+    let add = document.querySelector('.adicionar')
+    let body = document.querySelector('body')
+    let titulo = ''
+    add.addEventListener('click', adicionar)
+    let divCont = ''
+    let divting = ''
+    let spanDelete = ''
+    let spanDone = ''
+    let h2 = ''
+    let tiu = ''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    function adicionar (e) {
+      //console.log(e.target+ '1223')
+      if(input.value.length>0) {
+        titulo = input.value
+        h2 = document.createElement('h2')
+        h2.textContent = titulo
+
+        //div com background cinza
+        divCont = document.createElement('div')
+        divCont.classList.add('cont')
+        divCont.appendChild(h2)
+
+
+        //div com botões delete e done
+        divting = document.createElement('div')
+        divting.classList.add('ting')
+        divCont.appendChild(divting)
+
+        spanDelete = document.createElement('span')
+        spanDelete.classList.add('delete')
+        spanDelete.textContent = 'delete'
+        divting.appendChild(spanDelete)
+
+        spanDone = document.createElement('span')
+        spanDone.classList.add('done')
+        spanDone.textContent = 'done'
+        divting.appendChild(spanDone)
+        pai.appendChild(divCont)
+        console.log(divCont)
+     
+      }
+      else {
+        alert("Ocorreu um erro ao tentar adicionar uma tarefa")
+      }
+
+    }
+  
+
+  
+  </script>
 </html>
