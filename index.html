@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-
   </head>
   <body>
     <div class="pai">
@@ -40,100 +39,64 @@
     </div>
   </body>
   <script>
-    let input = document.querySelector('.input')
-    let pai = document.querySelector('.pai')
+    let input = document.querySelector(".input");
+    let pai = document.querySelector(".pai");
+    let add = document.querySelector(".adicionar");
+    let body = document.querySelector("body");
+    let titulo = "";
+    add.addEventListener("click", adicionar);
+    let divCont = "";
+    let divting = "";
+    let spanDelete = "";
+    let spanDone = "";
+    let h2 = "";
+    let tiu = "";
+        let deleteButton = document.querySelectorAll(".delete");
 
-    let add = document.querySelector('.adicionar')
-    let body = document.querySelector('body')
-    let titulo = ''
-    add.addEventListener('click', adicionar)
-    let divCont = ''
-    let divting = ''
-    let spanDelete = ''
-    let spanDone = ''
-    let h2 = ''
-    let tiu = ''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    function adicionar (e) {
+    divCont;
+    function adicionar(e) {
+      e.stopPropagation();
       //console.log(e.target+ '1223')
-      if(input.value.length>0) {
-        titulo = input.value
-        h2 = document.createElement('h2')
-        h2.textContent = titulo
+      if (input.value.length > 0) {
+        titulo = input.value;
+        h2 = document.createElement("h2");
+        h2.textContent = titulo;
 
         //div com background cinza
-        divCont = document.createElement('div')
-        divCont.classList.add('cont')
-        divCont.appendChild(h2)
-
+        divCont = document.createElement("div");
+        divCont.classList.add("cont");
+        divCont.appendChild(h2);
 
         //div com botões delete e done
-        divting = document.createElement('div')
-        divting.classList.add('ting')
-        divCont.appendChild(divting)
+        divting = document.createElement("div");
+        divting.classList.add("ting");
+        divCont.appendChild(divting);
 
-        spanDelete = document.createElement('span')
-        spanDelete.classList.add('delete')
-        spanDelete.textContent = 'delete'
-        divting.appendChild(spanDelete)
+        spanDelete = document.createElement("span");
+        spanDelete.classList.add("delete");
+        spanDelete.textContent = "delete";
+        divting.appendChild(spanDelete);
 
-        spanDone = document.createElement('span')
-        spanDone.classList.add('done')
-        spanDone.textContent = 'done'
-        divting.appendChild(spanDone)
-        pai.appendChild(divCont)
-        console.log(divCont)
-     
+        spanDone = document.createElement("span");
+        spanDone.classList.add("done");
+        spanDone.textContent = "done";
+        divting.appendChild(spanDone);
+        pai.appendChild(divCont);
+        deleteButton = document.querySelectorAll(".delete");
+
+
+      } else {
+        alert("Ocorreu um erro ao tentar adicionar uma tarefa");
       }
-      else {
-        alert("Ocorreu um erro ao tentar adicionar uma tarefa")
-      }
-
+      
     }
-  
 
-  
+    deleteButton.forEach((el, id)=> {
+      el.addEventListener('click', (el)=>{
+        console.log('Cliquei no delete')
+        el.bubbles= false
+        console.log(el)
+      })
+    })
   </script>
 </html>
